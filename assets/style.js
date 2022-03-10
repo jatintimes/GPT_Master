@@ -73,6 +73,45 @@ function setMvalue() {
   sessionStorage.setItem("Mapping1", map1);
 }
 
+function addmoresize() {
+  var mappingHtml =
+    '<form class="center_things" style="flex-direction: column;">\n' +
+    '                <input type="text" id="mapping1" onblur="setMvalue()" name="size-mapping" value="mapping1" />\n' +
+    "\n" +
+    '                <table class="table">\n' +
+    "                  <thead>\n" +
+    "                    <tr>\n" +
+    "                      <th>Viewport</th>\n" +
+    "                      <th>Ad Size</th>\n" +
+    "                    </tr>\n" +
+    "                  </thead>\n" +
+    "                  <tbody>\n" +
+    "                    <tr>\n" +
+    '                      <td><input type="text" id="SM_Desktop" name="Desktop" placeholder="Desktop" value="[992, 0]" />\n' +
+    "                      </td>\n" +
+    '                      <td><input type="text" id="SM_Desktop_adsize" name="Desktop" placeholder="Desktop"\n' +
+    '                          value="[[728, 90] , [970 , 250]]" /></td>\n' +
+    "                    </tr>\n" +
+    "                    <tr>\n" +
+    '                      <td><input type="text" id="SM_Mobile" name="Mobile" placeholder="Mobile" value="[768, 0]" /></td>\n' +
+    '                      <td><input type="text" id="SM_Mobile_adsize" name="Desktop" placeholder="Desktop"\n' +
+    '                          value="[[300, 250], [336 , 280]]" /></td>\n' +
+    "\n" +
+    "                    </tr>\n" +
+    "                    <tr>\n" +
+    '                      <td><input type="text" id="SM_Tablet" name="Tablet" placeholder="Tablet" value="[320, 0]" /></td>\n' +
+    '                      <td><input type="text" id="SM_Tablet_adsize" name="Desktop" placeholder="Desktop"\n' +
+    '                          value="[[300, 250], [336 , 280]]" /></td>\n' +
+    "                    </tr>\n" +
+    "\n" +
+    "                  </tbody>\n" +
+    "                </table>\n" +
+    "\n" +
+    "              </form>";
+
+  document.getElementById("sda").innerHTML += mappingHtml;
+}
+
 // EVENT LISTENERS
 
 const selectElement = document.querySelector("#tagtype");
@@ -100,7 +139,6 @@ selectElement.addEventListener("change", (event) => {
 SiZemApping.addEventListener("click", (event) => {
   if (sessionStorage.getItem("sizeMapping") == 1) {
     document.getElementById("tagmapping").style.display = "block";
-    
   } else {
     document.getElementById("tagmapping").style.display = "none";
   }
