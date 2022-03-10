@@ -4,184 +4,285 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title></title>
-  <meta name="description" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="/assets/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-</head>
-
-<body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md">
-        <div class="card bg-success mb-3 w-auto">
-          <div class="card-header text-white">Tag Settings</div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <form>
-                <label for="cars">Select Tag Type</label>
-                <select name="tagtype" id="tagtype">
-                  <option value="gpt">GPT</option>
-                  <option value="amp">AMP</option>
-                  <option value="passback">Passback</option>
-                </select>
-              </form>
-            </li>
-            <li class="list-group-item">
-              <form>
-                <label for="cars">Network Code</label>
-                <input type="text" id="fname" name="fname">
-
-              </form>
-            </li>
-            <li class="list-group-item">
-              <form>
-                <label for="cars">Key-Value</label>
-                <input type="text" id="fname" name="fname">
-
-              </form>
-            </li>
-            <li class="list-group-item"><label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label> <span class="ml-auto p-2">SRA</span></li>
-            <li class="list-group-item"><label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label><span class="ml-auto p-2">Advance Option</span></li>
-            <li class="list-group-item"><label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label><span class="ml-auto p-2">Size Mapping</span></li>
-            <li class="list-group-item"><label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label><span class="ml-auto p-2">AdX / AdSense</span></li>
-            <li class="list-group-item"><label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label><span class="ml-auto p-2">VAST/Video Tag</span></li>
-
-
-          </ul>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md">
+          <div class="card bg-success mb-3 w-auto">
+            <div class="card-header text-white">Tag Settings</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <form>
+                  <label for="cars">Select Tag Type</label>
+                  <select name="tagtype" id="tagtype">
+                    <option value="gpt">GPT</option>
+                    <option value="amp">AMP</option>
+                    <option value="passback">Passback</option>
+                  </select>
+                </form>
+              </li>
+              <li class="list-group-item">
+                <form>
+                  <label for="cars">Network Code</label>
+                  <input type="text" id="fname" name="fname" />
+                </form>
+              </li>
+              <li class="list-group-item">
+                <form>
+                  <label for="cars">Key-Value</label>
+                  <input type="text" id="fname" name="fname" />
+                </form>
+              </li>
+              <li class="list-group-item">
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span>
+                </label>
+                <span class="ml-auto p-2">SRA</span>
+              </li>
+              <li class="list-group-item">
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span> </label
+                ><span class="ml-auto p-2">Advance Option</span>
+              </li>
+              <li class="list-group-item">
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span> </label
+                ><span class="ml-auto p-2">Size Mapping</span>
+              </li>
+              <li class="list-group-item">
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span> </label
+                ><span class="ml-auto p-2">AdX / AdSense</span>
+              </li>
+              <li class="list-group-item">
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span> </label
+                ><span class="ml-auto p-2">VAST/Video Tag</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="card bg-warning mb-3 w-auto">
+            <div class="card-header">Advance Settings</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span>
+                </label>
+                <span class="ml-auto p-2"> Collapse Empty DIVs </span>
+              </li>
+              <li class="list-group-item">
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span> </label
+                ><span class="ml-auto p-2"> Disable Initial Load </span>
+              </li>
+              <li class="list-group-item">
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span> </label
+                ><span class="ml-auto p-2">Center Ads</span>
+              </li>
+              <li class="list-group-item">
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span> </label
+                ><span class="ml-auto p-2">Disable Cookie</span>
+              </li>
+              <li class="list-group-item">
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span> </label
+                ><span class="ml-auto p-2">Slot Refresh</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="card bg-success mb-3 w-auto">
+            <div class="card-header text-white">Size Mapping</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <form>
+                  <label for="cars">Name</label>
+                  <input type="text" id="fname" name="fname" />
+                </form>
+                <form>
+                  <input
+                    type="text"
+                    style="width: 120px"
+                    id="fname"
+                    name="fname"
+                    placeholder="Viewport Size"
+                  />
+                  <input
+                    type="text"
+                    id="fname"
+                    name="fname"
+                    placeholder="Ad Size"
+                  />
+                  <img
+                    style="width: 25px; height: 50px"
+                    src="/assets/image/plus.svg"
+                  />
+                  <img
+                    style="width: 25px; height: 50px"
+                    src="/assets/image/minus.svg"
+                  />
+                </form>
+              </li>
+              <li
+                class="list-group-item"
+                style="
+                  display: flex;
+                  place-items: center;
+                  justify-content: center;
+                "
+              >
+                <img
+                  style="width: 25px; height: 30px"
+                  src="/assets/image/plus.svg"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="card bg-success mb-3 w-auto">
+            <div class="card-header text-white">Refresh Settings</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <form>
+                  <label for="cars">Time</label>
+                  <input type="text" id="fname" name="fname" />
+                </form>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="col-md">
-        <div class="card bg-warning mb-3 w-auto">
-          <div class="card-header">Advance Settings</div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label> <span class="ml-auto p-2">
-                Collapse Empty DIVs
-              </span></li>
-            <li class="list-group-item"><label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label><span class="ml-auto p-2">
-                Disable Initial Load
-              </span></li>
-            <li class="list-group-item"><label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label><span class="ml-auto p-2">Center Ads</span></li>
-            <li class="list-group-item"><label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label><span class="ml-auto p-2">Disable Cookie</span></li>
 
+      <section id="gpt_config">
+        <div class="card mb-3 w-auto">
+          <h5 class="card-header bg-dark text-white">
+            GPT Ad Slot Configuration
+          </h5>
+          <div class="card-body">
+            <form>
+              <input
+                type="text"
+                style="width: 20%"
+                id="fname"
+                name="fname"
+                placeholder="Ad Slot Name"
+              />
+              <input
+                type="text"
+                style="width: 20%"
+                id="fname"
+                name="fname"
+                placeholder="Ad Size"
+              />
 
-
-          </ul>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="card bg-success mb-3 w-auto">
-          <div class="card-header text-white">Size Mapping</div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-
-            </li>
-            <li class="list-group-item">
-              <form>
-                <label for="cars">Name</label>
-                <input type="text" id="fname" name="fname">
-              </form>
-              <form>
-                <input type="text" style="width: 120px;" id="fname" name="fname" placeholder="Viewport Size">
-                <input type="text" id="fname" name="fname" placeholder="Ad Size">
-                <img style="width: 25px; height: 50px;" src="/assets/image/plus.svg" />
-                <img style="width: 25px; height: 50px;" src="/assets/image/minus.svg" />
-              </form>
-
-            </li>
-            <img style="width: 50px; height: 50px;" src="/assets/image/plus.svg" />
-
-          </ul>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="card bg-success mb-3 w-auto">
-          <div class="card-header text-white">Refresh Settings</div>
-          <ul class="list-group list-group-flush">
-
-            <li class="list-group-item">
-              <form>
-                <label for="cars">Time</label>
-                <input type="text" id="fname" name="fname">
-
-              </form>
-            </li>
-
-            <li class="list-group-item"><label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label><span class="ml-auto p-2">VAST/Video Tag</span></li>
-
-
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <section>
-      <div class="card mb-3 w-auto">
-        <h5 class="card-header bg-dark text-white">Ad Slot Configuration</h5>
-        <div class="card-body">
-          <form>
-            <input type="text" style="width: 20%;" id="fname" name="fname" placeholder="Viewport Size">
-            <input type="text" style="width: 20%;" id="fname" name="fname" placeholder="Ad Size">
-            <form style="width: 20%;">
-              <select style="width: 20%;" name="tagtype" id="tagtype">
-                <option value="gpt">GPT</option>
+              <select style="width: 20%" name="tagtype" id="tagtype">
+                <option value="" disabled selected>Select Mapping</option>
+                <option value="gpt">mapping 1</option>
                 <option value="amp">AMP</option>
                 <option value="passback">Passback</option>
               </select>
+              <select style="width: 20%" name="tagtype" id="tagtype">
+                <option value="" disabled selected>Refresh?</option>
+                <option value="gpt">Yes</option>
+                <option value="amp">No</option>
+              </select>
             </form>
-            <img style="width: 40px; height: 50px;" src="/assets/image/plus.svg" />
-          </form>
+            <img
+              style="width: 40px; height: 50px"
+              src="/assets/image/plus.svg"
+            />
+          </div>
         </div>
-      </div>
-    </section>
-  </div>
-  <script src="" async defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-    crossorigin="anonymous"></script>
-  <script src="/assets/style.js"></script>
-</body>
+      </section>
+      <section id="amp_config">
+        <div class="card mb-3 w-auto">
+          <h5 class="card-header bg-dark text-white">
+            AMP Ad Slot Configuration
+          </h5>
+          <div class="card-body">
+            <form>
+              <input
+                type="text"
+                style="width: 20%"
+                id="fname"
+                name="fname"
+                placeholder="Ad Slot Name"
+              />
+              <input
+                type="text"
+                style="width: 20%"
+                id="fname"
+                name="fname"
+                placeholder="Ad Size"
+              />
 
+              <select style="width: 20%" name="tagtype" id="tagtype">
+                <option value="" disabled selected>Select Mapping</option>
+                <option value="gpt">mapping 1</option>
+                <option value="amp">AMP</option>
+                <option value="passback">Passback</option>
+              </select>
+              <select style="width: 20%" name="tagtype" id="tagtype">
+                <option value="" disabled selected>Refresh?</option>
+                <option value="gpt">Yes</option>
+                <option value="amp">No</option>
+              </select>
+            </form>
+            <img
+              style="width: 40px; height: 50px"
+              src="/assets/image/plus.svg"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="" async defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/style.js"></script>
+  </body>
 </html>
