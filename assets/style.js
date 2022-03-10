@@ -25,30 +25,51 @@ function refresh_button_function() {
   }
 }
 
+var sRA;
 function enableSRA() {
-    var sRA = "googletag.pubads().enableSingleRequest();"
-    }
-  
+  if (sessionStorage.getItem("SRA") == 1) {
+    console.log("SRA Removed");
+    sessionStorage.setItem("SRA", 0);
+  } else {
+    sRA = "googletag.pubads().enableSingleRequest();";
+    console.log("SRA Enabled");
+    sessionStorage.setItem("SRA", 1);
+  }
+}
+var CollapseEDiv;
+function dIVcollapse() {
+  if (sessionStorage.getItem("DC") == 1) {
+    console.log("DC Removed");
+    sessionStorage.setItem("DC", 0);
+  } else {
+    CollapseEDiv = "googletag.pubads().collapseEmptyDivs();";
+    console.log("DC Enabled");
+    sessionStorage.setItem("DC", 1);
+  }
+}
+
+function Loaddisabled() {
+  var isdisable = "googletag.pubads().disableInitialLoad();";
+  console.log("Collapse Empty Div");
+}
 
 const selectElement = document.querySelector("#tagtype");
 
 selectElement.addEventListener("change", (event) => {
   if (event.target.value == "gpt") {
-
-    document.getElementById("gpt_config").style.display="block";
+    document.getElementById("gpt_config").style.display = "block";
 
     selectElement.disabled = true;
   } else if (event.target.value == "amp") {
-    document.getElementById("amp_config").style.display="block";
+    document.getElementById("amp_config").style.display = "block";
     selectElement.disabled = true;
   } else if (event.target.value == "passback") {
-    document.getElementById("passback_config").style.display="block";
+    document.getElementById("passback_config").style.display = "block";
     selectElement.disabled = true;
   } else if (event.target.value == "video") {
-    document.getElementById("video_config").style.display="block";
+    document.getElementById("video_config").style.display = "block";
     selectElement.disabled = true;
-  } 
-  else {
+  } else {
     alert("select a valid tagtype");
   }
 });

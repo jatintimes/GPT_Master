@@ -74,7 +74,7 @@
               <li class="list-group-item" id="SRA_button">
                 <label class="switch">
                   <input type="checkbox" />
-                  <span class="slider round"></span>
+                  <span class="slider round" onclick="enableSRA();"></span>
                 </label>
                 <span class="ml-auto p-2">SRA</span>
               </li>
@@ -113,14 +113,17 @@
               <li class="list-group-item">
                 <label class="switch">
                   <input type="checkbox" />
-                  <span class="slider round"></span>
+                  <span class="slider round" onclick="dIVcollapse();"></span>
                 </label>
                 <span class="ml-auto p-2"> Collapse Empty DIVs </span>
               </li>
               <li class="list-group-item">
                 <label class="switch">
                   <input type="checkbox" />
-                  <span class="slider round"></span> </label
+                  <span
+                    class="slider round"
+                    onclick="Loaddisabled()"
+                  ></span> </label
                 ><span class="ml-auto p-2"> Disable Initial Load </span>
               </li>
               <li class="list-group-item">
@@ -211,7 +214,7 @@
         </div>
       </div>
 
-      <section id="gpt_config" style="display: none;">
+      <section id="gpt_config" style="display: none">
         <div class="card mb-3 w-auto">
           <h5 class="card-header bg-dark text-white">
             GPT Ad Slot Configuration
@@ -251,10 +254,15 @@
             />
           </div>
         </div>
-        <div style="display: flex; justify-content: center; place-items: center;" >  <button id="gpt_gen_tag" class="btn bg-danger text-white"> Generate Tag</button></div>
-      
+        <div
+          style="display: flex; justify-content: center; place-items: center"
+        >
+          <button id="gpt_gen_tag" class="btn bg-danger text-white">
+            Generate Tag
+          </button>
+        </div>
       </section>
-      <section id="amp_config" style="display: none;">
+      <section id="amp_config" style="display: none">
         <div class="card mb-3 w-auto">
           <h5 class="card-header bg-dark text-white">
             AMP Ad Slot Configuration
@@ -295,9 +303,15 @@
             />
           </div>
         </div>
-        <div style="display: flex; justify-content: center; place-items: center;" >  <button id="amp_gen_tag" class="btn bg-danger text-white"> Generate Tag</button></div>
+        <div
+          style="display: flex; justify-content: center; place-items: center"
+        >
+          <button id="amp_gen_tag" class="btn bg-danger text-white">
+            Generate Tag
+          </button>
+        </div>
       </section>
-      <section id="passback_config" style="display: none;">
+      <section id="passback_config" style="display: none">
         <div class="card mb-3 w-auto">
           <h5 class="card-header bg-dark text-white">
             Passback Ad Slot Configuration
@@ -325,9 +339,15 @@
             </form>
           </div>
         </div>
-        <div style="display: flex; justify-content: center; place-items: center;" >  <button id="passback_gen_tag" class="btn bg-danger text-white"> Generate Tag</button></div>
+        <div
+          style="display: flex; justify-content: center; place-items: center"
+        >
+          <button id="passback_gen_tag" class="btn bg-danger text-white">
+            Generate Tag
+          </button>
+        </div>
       </section>
-      <section id="video_config" style="display: none;">
+      <section id="video_config" style="display: none">
         <div class="card mb-3 w-auto">
           <h5 class="card-header bg-dark text-white">
             Video Ad Slot Configuration
@@ -355,7 +375,13 @@
             </form>
           </div>
         </div>
-        <div style="display: flex; justify-content: center; place-items: center;" >  <button id="video_gen_tag" class="btn bg-danger text-white"> Generate Tag</button></div>
+        <div
+          style="display: flex; justify-content: center; place-items: center"
+        >
+          <button id="video_gen_tag" class="btn bg-danger text-white">
+            Generate Tag
+          </button>
+        </div>
       </section>
     </div>
     <script
