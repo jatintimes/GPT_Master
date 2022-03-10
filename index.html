@@ -52,17 +52,17 @@
                   <label for="tagsettings">Select Tag Type</label>
                   <select name="tagtype" id="tagtype">
                     <option value="" disabled selected>Select Tag</option>
-                    <option value="gpt">GPT</option>
-                    <option value="amp">AMP</option>
-                    <option value="passback">Passback</option>
-                    <option value="video">Passback</option>
+                    <option value="gpt">Normal GPT Tag</option>
+                    <option value="amp">AMP Tag</option>
+                    <option value="passback">Passback Tag</option>
+                    <option value="video">Video Tag</option>
                   </select>
                 </form>
               </li>
               <li class="list-group-item">
                 <form>
-                  <label for="cars">Network Code</label>
-                  <input type="text" id="fname" name="fname" />
+                  <label for="cars">Client Name</label>
+                  <input type="text" id="client_Name" name="Client" />
                 </form>
               </li>
               <li class="list-group-item">
@@ -251,6 +251,8 @@
             />
           </div>
         </div>
+        <div style="display: flex; justify-content: center; place-items: center;" >  <button id="gpt_gen_tag" class="btn bg-danger text-white"> Generate Tag</button></div>
+      
       </section>
       <section id="amp_config" style="display: none;">
         <div class="card mb-3 w-auto">
@@ -293,6 +295,7 @@
             />
           </div>
         </div>
+        <div style="display: flex; justify-content: center; place-items: center;" >  <button id="amp_gen_tag" class="btn bg-danger text-white"> Generate Tag</button></div>
       </section>
       <section id="passback_config" style="display: none;">
         <div class="card mb-3 w-auto">
@@ -322,6 +325,7 @@
             </form>
           </div>
         </div>
+        <div style="display: flex; justify-content: center; place-items: center;" >  <button id="passback_gen_tag" class="btn bg-danger text-white"> Generate Tag</button></div>
       </section>
       <section id="video_config" style="display: none;">
         <div class="card mb-3 w-auto">
@@ -351,6 +355,7 @@
             </form>
           </div>
         </div>
+        <div style="display: flex; justify-content: center; place-items: center;" >  <button id="video_gen_tag" class="btn bg-danger text-white"> Generate Tag</button></div>
       </section>
     </div>
     <script

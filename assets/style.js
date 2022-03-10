@@ -25,6 +25,11 @@ function refresh_button_function() {
   }
 }
 
+function enableSRA() {
+    var sRA = "googletag.pubads().enableSingleRequest();"
+    }
+  
+
 const selectElement = document.querySelector("#tagtype");
 
 selectElement.addEventListener("change", (event) => {
