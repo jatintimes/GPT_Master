@@ -1,3 +1,4 @@
+// Common Function
 function advance_button_function() {
   var div = document.getElementById("advance_settings");
   if (div.style.display !== "none") {
@@ -11,8 +12,10 @@ function sizemapping_button_function() {
   var div = document.getElementById("size_mapping");
   if (div.style.display !== "none") {
     div.style.display = "none";
+    sessionStorage.setItem("sizeMapping", 0);
   } else {
     div.style.display = "block";
+    sessionStorage.setItem("sizeMapping", 1);
   }
 }
 
@@ -25,35 +28,55 @@ function refresh_button_function() {
   }
 }
 
-var sRA;
 function enableSRA() {
   if (sessionStorage.getItem("SRA") == 1) {
     console.log("SRA Removed");
     sessionStorage.setItem("SRA", 0);
   } else {
-    sRA = "googletag.pubads().enableSingleRequest();";
     console.log("SRA Enabled");
     sessionStorage.setItem("SRA", 1);
   }
 }
-var CollapseEDiv;
+
 function dIVcollapse() {
   if (sessionStorage.getItem("DC") == 1) {
     console.log("DC Removed");
     sessionStorage.setItem("DC", 0);
   } else {
-    CollapseEDiv = "googletag.pubads().collapseEmptyDivs();";
     console.log("DC Enabled");
     sessionStorage.setItem("DC", 1);
   }
 }
 
 function Loaddisabled() {
-  var isdisable = "googletag.pubads().disableInitialLoad();";
-  console.log("Collapse Empty Div");
+  if (sessionStorage.getItem("DI") == 1) {
+    console.log("DI Removed");
+    sessionStorage.setItem("DI", 0);
+  } else {
+    console.log("DI Enabled");
+    sessionStorage.setItem("DI", 1);
+  }
 }
 
+function adsCenter() {
+  if (sessionStorage.getItem("CA") == 1) {
+    console.log("CA Removed");
+    sessionStorage.setItem("CA", 0);
+  } else {
+    console.log("CA Enabled");
+    sessionStorage.setItem("CA", 1);
+  }
+}
+
+function setMvalue() {
+  var map1 = document.getElementById("mapping1").value;
+  sessionStorage.setItem("Mapping1", map1);
+}
+
+// EVENT LISTENERS
+
 const selectElement = document.querySelector("#tagtype");
+const SiZemApping = document.querySelector("#sIzeMapping");
 
 selectElement.addEventListener("change", (event) => {
   if (event.target.value == "gpt") {
@@ -73,3 +96,29 @@ selectElement.addEventListener("change", (event) => {
     alert("select a valid tagtype");
   }
 });
+
+SiZemApping.addEventListener("click", (event) => {
+  if (sessionStorage.getItem("sizeMapping") == 1) {
+    document.getElementById("tagmapping").style.display = "block";
+    
+  } else {
+    document.getElementById("tagmapping").style.display = "none";
+  }
+});
+
+// Final Values
+
+function getallvalue() {
+  //All var
+  var RTime = document.getElementById("refreshTime").value;
+  var clientName = document.getElementById("client_Name").value;
+  var kEyValue = document.getElementById("kValue").value;
+
+  if (RTime == "") {
+    console.log("Refresh has no Value");
+  } else {
+    console.log(RTime);
+  }
+}
+
+refreshTime;
