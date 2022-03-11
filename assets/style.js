@@ -16,8 +16,8 @@ function sizemapping_button_function() {
   } else {
     div.style.display = "block";
     sessionStorage.setItem("sizeMapping", 1);
-    sessionStorage.setItem('numberOfMapping', 1);
-    sessionStorage.setItem('mapName', "['Mapping1]'");
+    sessionStorage.setItem("numberOfMapping", 1);
+    sessionStorage.setItem("mapName", "Mapping1");
   }
 }
 
@@ -76,21 +76,23 @@ function setMvalue() {
 }
 
 function addmoresize() {
-  var SMValue = sessionStorage.getItem('numberOfMapping');
+  var SMValue = sessionStorage.getItem("numberOfMapping");
   var SMValue = parseInt(SMValue);
   var NSMValue = SMValue + 1;
-  sessionStorage.setItem('numberOfMapping', NSMValue);
-  var xx = sessionStorage.getItem('numberOfMapping');
-  console.log(xx);
+  sessionStorage.setItem("numberOfMapping", NSMValue);
+  var xx = sessionStorage.getItem("numberOfMapping");
 
-  var tMapName = sessionStorage.getItem('mapName');
-  console.log(typeof(tMapName));
- tMapName.remove(-1)
- console.log(tMapName);
+  var tMapName = sessionStorage.getItem("mapName");
+  sessionStorage.setItem("mapName", tMapName + ",mapping" + xx + "");
+  console.log(sessionStorage.getItem("mapName"));
 
   var mappingHtml =
     '<form class="center_things" style="flex-direction: column;">\n' +
-    '                <input type="text" class="form-control" onblur="setMvalue()" name="size-mapping" value="mapping'+ xx +'" readonly />\n' +
+    '                <input type="text" class="form-control" id="mapping' +
+    xx +
+    '" onblur="setMvalue()" name="size-mapping" value="mapping' +
+    xx +
+    '" readonly />\n' +
     "\n" +
     '                <table class="table">\n' +
     "                  <thead>\n" +
@@ -124,6 +126,16 @@ function addmoresize() {
     "              </form>";
 
   document.getElementById("sda").innerHTML += mappingHtml;
+}
+
+function setMapping() {
+  var storedNames = sessionStorage.getItem("mapName");
+  var maparray = storedNames.split(",");
+  maparray.forEach((e) => {
+    var oPtion =
+      '<option value="' + e + '" id="firstMapping">' + e + "</option>";
+    document.querySelector("#tagmapping").innerHTML += oPtion;
+  });
 }
 
 function deFineSlot() {
