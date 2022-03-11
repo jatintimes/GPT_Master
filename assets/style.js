@@ -16,6 +16,8 @@ function sizemapping_button_function() {
   } else {
     div.style.display = "block";
     sessionStorage.setItem("sizeMapping", 1);
+    sessionStorage.setItem('numberOfMapping', 1);
+    sessionStorage.setItem('mapName', "['Mapping1]'");
   }
 }
 
@@ -74,9 +76,21 @@ function setMvalue() {
 }
 
 function addmoresize() {
+  var SMValue = sessionStorage.getItem('numberOfMapping');
+  var SMValue = parseInt(SMValue);
+  var NSMValue = SMValue + 1;
+  sessionStorage.setItem('numberOfMapping', NSMValue);
+  var xx = sessionStorage.getItem('numberOfMapping');
+  console.log(xx);
+
+  var tMapName = sessionStorage.getItem('mapName');
+  console.log(typeof(tMapName));
+ tMapName.remove(-1)
+ console.log(tMapName);
+
   var mappingHtml =
     '<form class="center_things" style="flex-direction: column;">\n' +
-    '                <input type="text" id="mapping1" onblur="setMvalue()" name="size-mapping" value="mapping1" />\n' +
+    '                <input type="text" class="form-control" onblur="setMvalue()" name="size-mapping" value="mapping'+ xx +'" readonly />\n' +
     "\n" +
     '                <table class="table">\n' +
     "                  <thead>\n" +
@@ -133,7 +147,6 @@ function deFineSlot() {
     "\n" +
     "        </div>";
 }
-
 // EVENT LISTENERS
 
 const selectElement = document.querySelector("#tagtype");
@@ -180,5 +193,3 @@ function getallvalue() {
     console.log(RTime);
   }
 }
-
-refreshTime;
