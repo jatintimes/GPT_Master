@@ -162,7 +162,7 @@
                   place-items: center;
                   justify-content: center;
                 ">
-              <img style="width: 25px; height: 30px" src="/assets/image/plus.svg" onclick="addmoresize();"/>
+              <img style="width: 25px; height: 30px" src="/assets/image/plus.svg" onclick="addmoresize();" />
             </li>
           </ul>
         </div>
@@ -198,13 +198,15 @@
             </select>
             <select style="width: 20%; display: none;" name="tagtype" id="tagmapping">
               <option value="" disabled selected>Select Mapping</option>
-              <option value="gpt" id="firstMapping" ></option>
+              <option value="gpt" id="firstMapping"></option>
               <option value="amp">AMP</option>
               <option value="passback">Passback</option>
             </select>
           </form>
-          <img style="width: 40px; height: 50px" src="/assets/image/plus.svg" />
+
         </div>
+        <div id="addmoreslot"></div>
+        <img style="width: 40px; height: 50px" src="/assets/image/plus.svg" />
       </div>
       <div style="display: flex; justify-content: center; place-items: center">
         <button id="gpt_gen_tag" onclick="getallvalue()" class="btn bg-danger text-white">

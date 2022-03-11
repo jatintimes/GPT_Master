@@ -112,6 +112,28 @@ function addmoresize() {
   document.getElementById("sda").innerHTML += mappingHtml;
 }
 
+function deFineSlot() {
+  document.getElementById("addmoreslot").innerHTML +=
+    '<div class="card-body">\n' +
+    "          <form>\n" +
+    '            <input type="text" style="width: 20%" id="fname" name="fname" placeholder="Ad Slot Name" />\n' +
+    '            <input type="text" style="width: 20%" id="fname" name="fname" placeholder="Ad Size" />\n' +
+    '            <select style="width: 20%" name="tagtype" id="tagtype">\n' +
+    '              <option value="" disabled selected>Refresh?</option>\n' +
+    '              <option value="gpt">Yes</option>\n' +
+    '              <option value="amp">No</option>\n' +
+    "            </select>\n" +
+    '            <select style="width: 20%; display: none;" name="tagtype" id="tagmapping">\n' +
+    '              <option value="" disabled selected>Select Mapping</option>\n' +
+    '              <option value="gpt" id="firstMapping"></option>\n' +
+    '              <option value="amp">AMP</option>\n' +
+    '              <option value="passback">Passback</option>\n' +
+    "            </select>\n" +
+    "          </form>\n" +
+    "\n" +
+    "        </div>";
+}
+
 // EVENT LISTENERS
 
 const selectElement = document.querySelector("#tagtype");
