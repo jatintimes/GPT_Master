@@ -9,16 +9,24 @@ function advance_button_function() {
 }
 
 function sizemapping_button_function() {
-  var div = document.getElementById("size_mapping");
-  if (div.style.display !== "none") {
-    div.style.display = "none";
+  var switchstorage = document.querySelector(".tagmapping");
+
+  if (switchstorage.style.display !== "none") {
     sessionStorage.setItem("sizeMapping", 0);
   } else {
-    div.style.display = "block";
     sessionStorage.setItem("sizeMapping", 1);
     sessionStorage.setItem("numberOfMapping", 1);
     sessionStorage.setItem("mapName", "Mapping1");
   }
+
+  document.getElementsByName("tagmapping").forEach((div) => {
+    if (div.style.display !== "none") {
+      div.style.display = "none";
+    } else {
+      div.style.display = "block";
+    }
+  });
+
 }
 
 function refresh_button_function() {
@@ -134,7 +142,7 @@ function setMapping() {
   maparray.forEach((e) => {
     var oPtion =
       '<option value="' + e + '" id="firstMapping">' + e + "</option>";
-    document.querySelector("#tagmapping").innerHTML += oPtion;
+    document.querySelector(".tagmapping").innerHTML += oPtion;
   });
 }
 
@@ -144,16 +152,13 @@ function deFineSlot() {
     "          <form>\n" +
     '            <input type="text" style="width: 20%" id="fname" name="fname" placeholder="Ad Slot Name" />\n' +
     '            <input type="text" style="width: 20%" id="fname" name="fname" placeholder="Ad Size" />\n' +
-    '            <select style="width: 20%" name="tagtype" id="tagtype">\n' +
+    '            <select style="width: 20%" name="refresh" id="Ad_refresh">\n' +
     '              <option value="" disabled selected>Refresh?</option>\n' +
     '              <option value="gpt">Yes</option>\n' +
     '              <option value="amp">No</option>\n' +
     "            </select>\n" +
-    '            <select style="width: 20%; display: none;" name="tagtype" id="tagmapping">\n' +
+    '            <select style="width: 20%; display: none;" name="tagmapping" class="tagmapping">\n' +
     '              <option value="" disabled selected>Select Mapping</option>\n' +
-    '              <option value="gpt" id="firstMapping"></option>\n' +
-    '              <option value="amp">AMP</option>\n' +
-    '              <option value="passback">Passback</option>\n' +
     "            </select>\n" +
     "          </form>\n" +
     "\n" +
@@ -185,9 +190,9 @@ selectElement.addEventListener("change", (event) => {
 
 SiZemApping.addEventListener("click", (event) => {
   if (sessionStorage.getItem("sizeMapping") == 1) {
-    document.getElementById("tagmapping").style.display = "block";
+    document.getElementById("size_mapping").style.display = "block";
   } else {
-    document.getElementById("tagmapping").style.display = "none";
+    document.getElementById("size_mapping").style.display = "none";
   }
 });
 
