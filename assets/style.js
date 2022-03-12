@@ -26,7 +26,6 @@ function sizemapping_button_function() {
       div.style.display = "block";
     }
   });
-
 }
 
 function refresh_button_function() {
@@ -139,10 +138,16 @@ function addmoresize() {
 function setMapping() {
   var storedNames = sessionStorage.getItem("mapName");
   var maparray = storedNames.split(",");
+  const optionsadded = [];
   maparray.forEach((e) => {
     var oPtion =
       '<option value="' + e + '" id="firstMapping">' + e + "</option>";
-    document.querySelector(".tagmapping").innerHTML += oPtion;
+    // document.querySelector(".tagmapping").innerHTML += oPtion;
+    optionsadded.push(oPtion);
+  });
+
+  document.getElementsByName("tagmapping").forEach((div) => {
+    div.innerHTML += optionsadded;
   });
 }
 
