@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/assets/style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -51,13 +52,13 @@
             </li>
             <li class="list-group-item">
               <form>
-                <label for="cars">Client Name</label>
+                <label for="client_Name">Client Name</label>
                 <input type="text" id="client_Name" name="Client" required />
               </form>
             </li>
             <li class="list-group-item">
               <form>
-                <label for="cars">Key-Value</label>
+                <label for="Key-Value">Key-Value</label>
                 <input type="text" id="kValue" name="Key-Value" />
               </form>
             </li>
@@ -135,20 +136,20 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td><input type="text" id="SM_Desktop" name="Desktop" placeholder="Desktop" value="[992, 0]" />
+                      <td><input type="text" name="Desktop_viewport" placeholder="Desktop" value="[992, 0]" />
                       </td>
-                      <td><input type="text" id="SM_Desktop_adsize" name="Desktop" placeholder="Desktop"
+                      <td><input type="text" name="Desktop_size" placeholder="Desktop"
                           value="[[728, 90] , [970 , 250]]" /></td>
                     </tr>
                     <tr>
-                      <td><input type="text" id="SM_Mobile" name="Mobile" placeholder="Mobile" value="[768, 0]" /></td>
-                      <td><input type="text" id="SM_Mobile_adsize" name="Desktop" placeholder="Desktop"
+                      <td><input type="text" name="tablet_viewport" placeholder="Tablet" value="[768, 0]" /></td>
+                      <td><input type="text" name="tablet_size" placeholder="Desktop"
                           value="[[300, 250], [336 , 280]]" /></td>
 
                     </tr>
                     <tr>
-                      <td><input type="text" id="SM_Tablet" name="Tablet" placeholder="Tablet" value="[320, 0]" /></td>
-                      <td><input type="text" id="SM_Tablet_adsize" name="Desktop" placeholder="Desktop"
+                      <td><input type="text" name="mobile_viewport" placeholder="Tablet" value="[320, 0]" /></td>
+                      <td><input type="text" name="mobile_size" placeholder="Desktop"
                           value="[[300, 250], [336 , 280]]" /></td>
                     </tr>
 
@@ -202,6 +203,7 @@
             <select style="width: 20%; display: none;" name="tagmapping" class="tagmapping">
               <div id="slotMappings">
                 <option value="" disabled selected>Select Mapping</option>
+                <option value="NoSlotMapping">No Mapping</option>
               </div>
             </select>
           </form>
@@ -281,6 +283,8 @@
       </div>
     </section>
   </div>
+  <button id="formbutton">bomb</button>
+  <div id="formvalue"></div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
@@ -291,6 +295,7 @@
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
   <script src="/assets/style.js"></script>
+  <script src="/assets/getformvalue.js"></script>
 
 
 

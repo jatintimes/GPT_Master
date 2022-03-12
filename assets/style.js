@@ -110,20 +110,20 @@ function addmoresize() {
     "                  </thead>\n" +
     "                  <tbody>\n" +
     "                    <tr>\n" +
-    '                      <td><input type="text" id="SM_Desktop" name="Desktop" placeholder="Desktop" value="[992, 0]" />\n' +
+    '                      <td><input type="text" name="Desktop_viewport" placeholder="Desktop" value="[992, 0]" />\n' +
     "                      </td>\n" +
-    '                      <td><input type="text" id="SM_Desktop_adsize" name="Desktop" placeholder="Desktop"\n' +
+    '                      <td><input type="text" name="Desktop_size" placeholder="Desktop"\n' +
     '                          value="[[728, 90] , [970 , 250]]" /></td>\n' +
     "                    </tr>\n" +
     "                    <tr>\n" +
-    '                      <td><input type="text" id="SM_Mobile" name="Mobile" placeholder="Mobile" value="[768, 0]" /></td>\n' +
-    '                      <td><input type="text" id="SM_Mobile_adsize" name="Desktop" placeholder="Desktop"\n' +
+    '                      <td><input type="text" name="tablet_viewport" placeholder="tablet" value="[768, 0]" /></td>\n' +
+    '                      <td><input type="text" name="tablet_size" placeholder="tablet"\n' +
     '                          value="[[300, 250], [336 , 280]]" /></td>\n' +
     "\n" +
     "                    </tr>\n" +
     "                    <tr>\n" +
-    '                      <td><input type="text" id="SM_Tablet" name="Tablet" placeholder="Tablet" value="[320, 0]" /></td>\n' +
-    '                      <td><input type="text" id="SM_Tablet_adsize" name="Desktop" placeholder="Desktop"\n' +
+    '                      <td><input type="text" name="mobile_viewport" placeholder="Tablet" value="[320, 0]" /></td>\n' +
+    '                      <td><input type="text" name="mobile_size" placeholder="Desktop"\n' +
     '                          value="[[300, 250], [336 , 280]]" /></td>\n' +
     "                    </tr>\n" +
     "\n" +
@@ -164,6 +164,7 @@ function deFineSlot() {
     "            </select>\n" +
     '            <select style="width: 20%; display: none;" name="tagmapping" class="tagmapping">\n' +
     '              <option value="" disabled selected>Select Mapping</option>\n' +
+    '<option value="NoSlotMapping">No Mapping</option>\n' +
     "            </select>\n" +
     "          </form>\n" +
     "\n" +
