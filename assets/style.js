@@ -17,6 +17,7 @@ function sizemapping_button_function() {
     sessionStorage.setItem("sizeMapping", 1);
     sessionStorage.setItem("numberOfMapping", 1);
     sessionStorage.setItem("mapName", "Mapping1");
+    $(".chosen-container").width(150);
   }
 
   document.getElementsByName("tagmapping").forEach((div) => {

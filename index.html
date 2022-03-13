@@ -15,6 +15,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/plugin/chosen.css">
 </head>
 
 <body>
@@ -136,21 +137,60 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td><input type="text" name="Desktop_viewport" placeholder="Desktop" value="[992, 0]" />
+                      <td><input type="text" name="Desktop_viewport" placeholder="Desktop" value="Desktop_Sizes"
+                          disabled />
                       </td>
-                      <td><input type="text" name="Desktop_size" placeholder="Desktop"
-                          value="[[728, 90] , [970 , 250]]" /></td>
+                      <td><select data-placeholder="Choose Desktop Sizes" name="Desktop_Sizes" class="chosen-select"
+                          multiple tabindex="4">
+                          <option value="970x250">970x250</option>
+                          <option value="970x90">970x90</option>
+                          <option value="728x90">728x90</option>
+                          <option value="728x250">728x250</option>
+                          <option value="300x600">300x600</option>
+                          <option value="120x600">120x600</option>
+                          <option value="160x600">160x600</option>
+                          <option value="300x250">300x250</option>
+                          <option value="336x280">336x280</option>
+                          <option value="300x1050">300x1050</option>
+                          <option value="250x250">250x250</option>
+                          <option value="320x480">320x480</option>
+                          <option value="1x1">1x1</option>
+                        </select></td>
                     </tr>
                     <tr>
-                      <td><input type="text" name="tablet_viewport" placeholder="Tablet" value="[768, 0]" /></td>
-                      <td><input type="text" name="tablet_size" placeholder="Desktop"
-                          value="[[300, 250], [336 , 280]]" /></td>
+                      <td><input type="text" name="tablet_viewport" placeholder="Tablet" value="Tablet_Sizes"
+                          disabled /></td>
+                      <td><select data-placeholder="Choose Tablet Sizes" class="chosen-select" multiple tabindex="4"
+                          name="Tablet_sizes">
+                          <option value="300x250">300x250</option>
+                          <option value="336x280">336x280</option>
+                          <option value="320x100">320x100</option>
+                          <option value="300x100">300x100</option>
+                          <option value="300x600">300x600</option>
+                          <option value="320x50">320x50</option>
+                          <option value="300x1050">300x1050</option>
+                          <option value="250x250">250x250</option>
+                          <option value="320x480">320x480</option>
+                          <option value="1x1">1x1</option>
+                        </select></td>
 
                     </tr>
                     <tr>
-                      <td><input type="text" name="mobile_viewport" placeholder="Tablet" value="[320, 0]" /></td>
-                      <td><input type="text" name="mobile_size" placeholder="Desktop"
-                          value="[[300, 250], [336 , 280]]" /></td>
+                      <td><input type="text" name="mobile_viewport" placeholder="Mobile" value="Mobile_sizes"
+                          disabled /></td>
+                      <td><select data-placeholder="Choose Mobile Sizes" name="Mobile_sizes" class="chosen-select"
+                          multiple tabindex="4">
+                          <option value="300x250">300x250</option>
+                          <option value="336x280">336x280</option>
+                          <option value="320x100">320x100</option>
+                          <option value="300x100">300x100</option>
+                          <option value="300x600">300x600</option>
+                          <option value="320x50">320x50</option>
+                          <option value="300x1050">300x1050</option>
+                          <option value="250x250">250x250</option>
+                          <option value="320x480">320x480</option>
+                          <option value="1x1">1x1</option>
+                        </select></td>
                     </tr>
 
                   </tbody>
@@ -294,8 +334,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
+  <script src="/assets/plugin/chosen.js"></script>
   <script src="/assets/style.js"></script>
   <script src="/assets/getformvalue.js"></script>
+
 
 
 
