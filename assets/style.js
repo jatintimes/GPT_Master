@@ -96,9 +96,10 @@ function addmoresize() {
 
   var mappingHtml =
     '<form class="center_things" style="flex-direction: column;">\n' +
-    '                <input type="text" class="form-control" id="mapping' +
+    '                <input type="text" class="form-control" id="mapping ' +
     xx +
-    '" onblur="setMvalue()" name="size-mapping" value="mapping' +
+    '" onblur="setMvalue()" name="size-mapping"\n' +
+    '                  value="mapping' +
     xx +
     '" readonly />\n' +
     "\n" +
@@ -111,21 +112,60 @@ function addmoresize() {
     "                  </thead>\n" +
     "                  <tbody>\n" +
     "                    <tr>\n" +
-    '                      <td><input type="text" name="Desktop_viewport" placeholder="Desktop" value="[992, 0]" />\n' +
+    '                      <td><input type="text" name="Desktop_viewport" placeholder="Desktop" value="Desktop_Sizes"\n' +
+    "                          disabled />\n" +
     "                      </td>\n" +
-    '                      <td><input type="text" name="Desktop_size" placeholder="Desktop"\n' +
-    '                          value="[[728, 90] , [970 , 250]]" /></td>\n' +
+    '                      <td><select data-placeholder="Choose Desktop Sizes" name="Desktop_Sizes" class="chosen-select"\n' +
+    '                          multiple tabindex="4">\n' +
+    '                          <option value="970x250">970x250</option>\n' +
+    '                          <option value="970x90">970x90</option>\n' +
+    '                          <option value="728x90">728x90</option>\n' +
+    '                          <option value="728x250">728x250</option>\n' +
+    '                          <option value="300x600">300x600</option>\n' +
+    '                          <option value="120x600">120x600</option>\n' +
+    '                          <option value="160x600">160x600</option>\n' +
+    '                          <option value="300x250">300x250</option>\n' +
+    '                          <option value="336x280">336x280</option>\n' +
+    '                          <option value="300x1050">300x1050</option>\n' +
+    '                          <option value="250x250">250x250</option>\n' +
+    '                          <option value="320x480">320x480</option>\n' +
+    '                          <option value="1x1">1x1</option>\n' +
+    "                        </select></td>\n" +
     "                    </tr>\n" +
     "                    <tr>\n" +
-    '                      <td><input type="text" name="tablet_viewport" placeholder="tablet" value="[768, 0]" /></td>\n' +
-    '                      <td><input type="text" name="tablet_size" placeholder="tablet"\n' +
-    '                          value="[[300, 250], [336 , 280]]" /></td>\n' +
+    '                      <td><input type="text" name="tablet_viewport" placeholder="Tablet" value="Tablet_Sizes"\n' +
+    "                          disabled /></td>\n" +
+    '                      <td><select data-placeholder="Choose Tablet Sizes" class="chosen-select" multiple tabindex="4"\n' +
+    '                          name="Tablet_sizes">\n' +
+    '                          <option value="300x250">300x250</option>\n' +
+    '                          <option value="336x280">336x280</option>\n' +
+    '                          <option value="320x100">320x100</option>\n' +
+    '                          <option value="300x100">300x100</option>\n' +
+    '                          <option value="300x600">300x600</option>\n' +
+    '                          <option value="320x50">320x50</option>\n' +
+    '                          <option value="300x1050">300x1050</option>\n' +
+    '                          <option value="250x250">250x250</option>\n' +
+    '                          <option value="320x480">320x480</option>\n' +
+    '                          <option value="1x1">1x1</option>\n' +
+    "                        </select></td>\n" +
     "\n" +
     "                    </tr>\n" +
     "                    <tr>\n" +
-    '                      <td><input type="text" name="mobile_viewport" placeholder="Tablet" value="[320, 0]" /></td>\n' +
-    '                      <td><input type="text" name="mobile_size" placeholder="Desktop"\n' +
-    '                          value="[[300, 250], [336 , 280]]" /></td>\n' +
+    '                      <td><input type="text" name="mobile_viewport" placeholder="Mobile" value="Mobile_sizes"\n' +
+    "                          disabled /></td>\n" +
+    '                      <td><select data-placeholder="Choose Mobile Sizes" name="Mobile_sizes" class="chosen-select"\n' +
+    '                          multiple tabindex="4">\n' +
+    '                          <option value="300x250">300x250</option>\n' +
+    '                          <option value="336x280">336x280</option>\n' +
+    '                          <option value="320x100">320x100</option>\n' +
+    '                          <option value="300x100">300x100</option>\n' +
+    '                          <option value="300x600">300x600</option>\n' +
+    '                          <option value="320x50">320x50</option>\n' +
+    '                          <option value="300x1050">300x1050</option>\n' +
+    '                          <option value="250x250">250x250</option>\n' +
+    '                          <option value="320x480">320x480</option>\n' +
+    '                          <option value="1x1">1x1</option>\n' +
+    "                        </select></td>\n" +
     "                    </tr>\n" +
     "\n" +
     "                  </tbody>\n" +
@@ -134,6 +174,10 @@ function addmoresize() {
     "              </form>";
 
   document.getElementById("sda").innerHTML += mappingHtml;
+  setTimeout(function () {
+    $(".chosen-select").chosen();
+    $(".chosen-select").chosen({ width: "95%" });
+  }, 500);
 }
 
 function setMapping() {
@@ -153,24 +197,55 @@ function setMapping() {
 }
 
 function deFineSlot() {
+  var GPTValue = sessionStorage.getItem("numberOfGptslot");
+  var GPTValue = parseInt(GPTValue);
+  var NGPTValue = GPTValue + 1;
+  sessionStorage.setItem("numberOfGptslot", NGPTValue);
+  var xx = sessionStorage.getItem("numberOfGptslot");
+
   document.getElementById("addmoreslot").innerHTML +=
-    '<div class="card-body">\n' +
-    "          <form>\n" +
-    '            <input type="text" style="width: 20%" id="fname" name="fname" placeholder="Ad Slot Name" />\n' +
-    '            <input type="text" style="width: 20%" id="fname" name="fname" placeholder="Ad Size" />\n' +
+    "<form>\n" +
+    '            <input type="text" style="width: 20%" id="GPT_slot" name="GPT_Ad_Slot_Name_' +
+    xx +
+    '" placeholder="Ad Slot Name' +
+    xx +
+    ' " />\n' +
+    '            <select data-placeholder="Choose Ad Sizes" name="GPT_Ad_Sizes" class="chosen-select" multiple tabindex="4">\n' +
+    '              <option value="300x250">300x250</option>\n' +
+    '              <option value="336x280">336x280</option>\n' +
+    '              <option value="320x100">320x100</option>\n' +
+    '              <option value="300x100">300x100</option>\n' +
+    '              <option value="300x600">300x600</option>\n' +
+    '              <option value="320x50">320x50</option>\n' +
+    '              <option value="300x1050">300x1050</option>\n' +
+    '              <option value="250x250">250x250</option>\n' +
+    '              <option value="320x480">320x480</option>\n' +
+    '              <option value="1x1">1x1</option>\n' +
+    '              <option value="970x250">970x250</option>\n' +
+    '              <option value="970x90">970x90</option>\n' +
+    '              <option value="728x90">728x90</option>\n' +
+    '              <option value="728x250">728x250</option>\n' +
+    '              <option value="300x600">300x600</option>\n' +
+    '              <option value="120x600">120x600</option>\n' +
+    '              <option value="160x600">160x600</option>\n' +
+    "            </select>\n" +
     '            <select style="width: 20%" name="refresh" id="Ad_refresh">\n' +
     '              <option value="" disabled selected>Refresh?</option>\n' +
     '              <option value="gpt">Yes</option>\n' +
     '              <option value="amp">No</option>\n' +
     "            </select>\n" +
     '            <select style="width: 20%; display: none;" name="tagmapping" class="tagmapping">\n' +
-    '              <option value="" disabled selected>Select Mapping</option>\n' +
-    '<option value="NoSlotMapping">No Mapping</option>\n' +
+    '              <div id="slotMappings">\n' +
+    '                <option value="" disabled selected>Select Mapping</option>\n' +
+    '                <option value="NoSlotMapping">No Mapping</option>\n' +
+    "              </div>\n" +
     "            </select>\n" +
-    "          </form>\n" +
-    "\n" +
-    "        </div>";
+    "          </form>";
+  setTimeout(function () {
+    $(".chosen-select").chosen();
+  }, 5000);
 }
+
 // EVENT LISTENERS
 
 const selectElement = document.querySelector("#tagtype");
@@ -179,7 +254,7 @@ const SiZemApping = document.querySelector("#sIzeMapping");
 selectElement.addEventListener("change", (event) => {
   if (event.target.value == "gpt") {
     document.getElementById("gpt_config").style.display = "block";
-
+    sessionStorage.setItem("numberOfGptslot", 1);
     selectElement.disabled = true;
   } else if (event.target.value == "amp") {
     document.getElementById("amp_config").style.display = "block";
